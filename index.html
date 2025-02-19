@@ -10,21 +10,76 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body class="bg-primary">
+<body>
 
-    <section class="p-4">
-        <form action="" id="form_el">
-            <input id="input_distance" placeholder="inserisci distanza in km" type="text">
-            <input id="input_user_age" placeholder="inserisci età" type="text">
-            <button id="submit_button" class="bg-info" type="submit"> submit</button>
-        </form>
-    </section>
+    <main class="container-md">
 
-    <section id="info-card-section" class="p-4">
-        <div id="output_distance" class="bg-info">distanza: </div>
-        <div id="output_user_age" class="bg-info">età: </div>
-        <div id="output_price" class="bg-info">prezzo:</div>
-    </section>
+        <section class="pt-4 w-75 mx-auto">
+
+            <div class="card-body bg-danger">
+                <form action="" id="form_el">
+                    <div class="card-title text-center">
+                        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col text-center">
+                            <label for="" class="form-label">Nome Cognome</label>
+                            <br>
+                            <input type="text">
+                        </div>
+                        <div class="col text-center">
+                            <label for="" class="form-label">Km da percorrere</label>
+                            <br>
+                            <input id="input_distance" type="text">
+                        </div>
+
+                        <div class="col text-center">
+                            <div>
+                                <label for="" class="form-label">Fascia d'età</label>
+                                <select class="form-select form-select-sm w-75" name="" id="input_user_age">
+                                    <option selected>scegli</option>
+                                    <option value="17">Minorenne</option>
+                                    <option value="18">Adulto</option>
+                                    <option value="66">Over 65</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="submit_button" class="bg-info w-25 m-2" type="submit"> submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <section id="info-card-section" class="card p-4 w-75 mx-auto">
+            <div class="card-body ">
+
+
+                <div class="row d-flex">
+                    <div class="col">
+                        <div id="output_distance" class="bg-info">distanza: </div>
+                    </div>
+
+                    <div class="col">
+                        <div id="output_price" class="bg-info">prezzo:</div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+    </main>
+
+
 
 
 

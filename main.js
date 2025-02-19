@@ -57,6 +57,5 @@ form_el.addEventListener(`submit`, function (e) {
     e.preventDefault();
     console.log("this is the submit function on the form running (begin)");
     output_distance.innerHTML += input_distance.value
-    output_user_age.innerHTML += input_user_age.value
     output_price.innerHTML += discount_price.toFixed(2) + "€"
 })
