@@ -11,16 +11,28 @@ va applicato uno sconto del 40% per gli over 65.
 const submit_button = document.getElementById("submit_button")
 console.log(`submit_button is ${submit_button}`);
 
+const input_fullname = document.getElementById("input_fullname")
+console.log(input_fullname);
+
 const input_distance = document.getElementById("input_distance")
 console.log(`input_distance is ${input_distance}`);
 const input_user_age = document.getElementById("input_user_age")
 console.log(`input_user_age is ${input_user_age}`);
 
+//get output elements
+const form_el = document.getElementById("form_el")
+
+const output_fullname = document.getElementById("output_fullname")
+console.log(output_fullname);
+const output_price = document.getElementById("output_price")
+const output_distance = document.getElementById("output_distance")
+
 //calculate ticket price
 
 let discount_price = 0;
 let standard_price = 0;
-submit_button.addEventListener(`click`, function () {
+form_el.addEventListener(`submit`, function (e) {
+    e.preventDefault();
     const distance_value = Number(input_distance.value);
     console.log(`distance_value is ${distance_value}`);
     const user_age_value = Number(input_user_age.value);
@@ -43,19 +55,22 @@ submit_button.addEventListener(`click`, function () {
     } else {
         alert("input error")
     }
-})
 
 
-
-//get output elements
-const form_el = document.getElementById("form_el")
-const output_price = document.getElementById("output_price")
-console.log(output_price);
-
-//write on page
-form_el.addEventListener(`submit`, function (e) {
-    e.preventDefault();
     console.log("this is the submit function on the form running (begin)");
-    output_distance.innerHTML += input_distance.value
-    output_price.innerHTML += discount_price.toFixed(2) + "€"
+
+    output_fullname.innerHTML += input_fullname.value;
+    output_distance.innerHTML += input_distance.value;
+    output_price.innerHTML += discount_price.toFixed(2) + "€";
+
+    console.log(output_fullname.innerHTML);
+    console.log(output_distance.innerHTML);
+    console.log(output_price.innerHTML);
+
+
 })
+
+
+
+
+

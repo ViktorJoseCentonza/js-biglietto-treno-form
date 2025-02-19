@@ -16,7 +16,7 @@
 
         <section class="pt-4 w-75 mx-auto">
 
-            <div class="card-body bg-danger">
+            <div class="card bg-danger">
                 <form action="" id="form_el">
                     <div class="card-title text-center">
                         <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
@@ -25,18 +25,18 @@
                         <div class="col text-center">
                             <label for="" class="form-label">Nome Cognome</label>
                             <br>
-                            <input type="text">
+                            <input id="input_fullname" type="text" class="rounded">
                         </div>
                         <div class="col text-center">
                             <label for="" class="form-label">Km da percorrere</label>
                             <br>
-                            <input id="input_distance" type="text">
+                            <input id="input_distance" type="text" class="rounded">
                         </div>
 
                         <div class="col text-center">
                             <div>
                                 <label for="" class="form-label">Fascia d'età</label>
-                                <select class="form-select form-select-sm w-75" name="" id="input_user_age">
+                                <select class="rounded w-75" name="" id="input_user_age">
                                     <option selected>scegli</option>
                                     <option value="17">Minorenne</option>
                                     <option value="18">Adulto</option>
@@ -50,7 +50,7 @@
 
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button id="submit_button" class="bg-info w-25 m-2" type="submit"> submit</button>
+                        <button id="submit_button" class="bg-info w-25 m-2 rounded" type="submit"> submit</button>
                     </div>
                 </form>
             </div>
@@ -60,14 +60,21 @@
         <section id="info-card-section" class="card p-4 w-75 mx-auto">
             <div class="card-body ">
 
+                <div class="card-title text-center">
+                    <h1>IL TUO BIGLIETTO</h1>
+                </div>
 
                 <div class="row d-flex">
+
                     <div class="col">
-                        <div id="output_distance" class="bg-info">distanza: </div>
+                        <div id="output_fullname" class="bg-info rounded border border-dark">nome: </div>
+                    </div>
+                    <div class="col">
+                        <div id="output_distance" class="bg-info rounded border border-dark">distanza: </div>
                     </div>
 
                     <div class="col">
-                        <div id="output_price" class="bg-info">prezzo:</div>
+                        <div id="output_price" class="bg-info rounded border border-dark">prezzo:</div>
                     </div>
                 </div>
 
