@@ -17,6 +17,9 @@ const input_user_age = document.getElementById("input_user_age")
 console.log(`input_user_age is ${input_user_age}`);
 
 //calculate ticket price
+
+let discount_price = 0;
+let standard_price = 0;
 submit_button.addEventListener(`click`, function () {
     const distance_value = Number(input_distance.value);
     console.log(`distance_value is ${distance_value}`);
@@ -25,9 +28,9 @@ submit_button.addEventListener(`click`, function () {
 
     if (isNaN(distance_value) != true && isNaN(user_age_value) != true) {  //check for Nan in both values
         if (distance_value != 0 && user_age_value != 0) {   //check for 0 in both values
-            const standard_price = distance_value * 0.21;
+            standard_price = distance_value * 0.21;
             console.log(`pre-discount price is ${standard_price}`);
-            let discount_price = standard_price;
+            discount_price = standard_price;
             if (user_age_value > 65) {
                 discount_price = discount_price * 0.60
             } else if (user_age_value < 18) {
@@ -43,13 +46,17 @@ submit_button.addEventListener(`click`, function () {
 })
 
 
+
 //get output elements
 const form_el = document.getElementById("form_el")
+const output_price = document.getElementById("output_price")
+console.log(output_price);
 
 //write on page
 form_el.addEventListener(`submit`, function (e) {
     e.preventDefault();
-    console.log("hello");
-    console.log(`input_user_age is ${input_user_age}`);
-    output_distance.innerHTML = input_distance.value
+    console.log("this is the submit function on the form running (begin)");
+    output_distance.innerHTML += input_distance.value
+    output_user_age.innerHTML += input_user_age.value
+    output_price.innerHTML += discount_price.toFixed(2) + "€"
 })
