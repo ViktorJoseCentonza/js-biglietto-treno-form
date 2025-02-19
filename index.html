@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<body class="bg-primary">
 
     <section class="p-4">
-        <form action="">
-            <input id="distance" placeholder="inserisci distanza in km" type="text">
-            <input id="user_age" placeholder="inserisci età" type="text">
-            <button id="submit_button"> submit</button>
+        <form action="" id="form_el">
+            <input id="input_distance" placeholder="inserisci distanza in km" type="text">
+            <input id="input_user_age" placeholder="inserisci età" type="text">
+            <button id="submit_button" class="bg-info" type="submit"> submit</button>
         </form>
+    </section>
+
+    <section id="info-card-section" class="p-4">
+        <div id="output_distance" class="bg-info"></div>
+        <div id="output_user_age" class="bg-info"></div>
     </section>
 
 

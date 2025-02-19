@@ -7,37 +7,49 @@ il prezzo del biglietto è definito in base ai km (0.21 € al km)
 va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 */
+//select form inputs
+const submit_button = document.getElementById("submit_button")
+console.log(`submit_button is ${submit_button}`);
 
-const submitEl = document.getElementById("submit_button")
-console.log(submitEl);
+const input_distance = document.getElementById("input_distance")
+console.log(`input_distance is ${input_distance}`);
+const input_user_age = document.getElementById("input_user_age")
+console.log(`input_user_age is ${input_user_age}`);
 
-submitEl.addEventListener(`click`, function () {
+//calculate ticket price
+submit_button.addEventListener(`click`, function () {
+    const distance_value = Number(input_distance.value);
+    console.log(`distance_value is ${distance_value}`);
+    const user_age_value = Number(input_user_age.value);
+    console.log(`user_age_value value is ${user_age_value}`);
 
-    const distance = Number(document.getElementById("distance").value)
-    console.log(distance);
-
-    const user_age = document.getElementById("user_age").value;
-    console.log(user_age);
-
-    const standard_price = distance * 0.21;
-    console.log(`pre-discount price is ${standard_price}`);
-    let discount_price = standard_price;
-
-    if (user_age > 65) {
-        discount_price = discount_price * 0.60
-
-    } else if (user_age < 18) {
-        discount_price = discount_price * 0.80
-
+    if (isNaN(distance_value) != true && isNaN(user_age_value) != true) {  //check for Nan in both values
+        if (distance_value != 0 && user_age_value != 0) {   //check for 0 in both values
+            const standard_price = distance_value * 0.21;
+            console.log(`pre-discount price is ${standard_price}`);
+            let discount_price = standard_price;
+            if (user_age_value > 65) {
+                discount_price = discount_price * 0.60
+            } else if (user_age_value < 18) {
+                discount_price = discount_price * 0.80
+            }
+            console.log(`your price is ${discount_price.toFixed(2) + "€"}`);
+        } else {
+            alert("input error")
+        }
+    } else {
+        alert("input error")
     }
-
-    console.log(`your price is ${discount_price}`);
-
-
-
-
-
-
-
 })
 
+
+//get output elements
+const form_el = document.getElementById("form_el")
+
+//write on page
+form_el.addEventListener(`submit`, function (e) {
+    e.preventDefault();
+    console.log("hello");
+    console.log(`input_user_age is ${input_user_age}`);
+    output_distance.innerHTML = input_distance.value
+})
